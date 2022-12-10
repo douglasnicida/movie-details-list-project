@@ -1,0 +1,33 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 100px;
+
+    padding: 60px;
+
+    background-color: black;
+}
+
+a{
+    text-decoration: none;
+}
+
+.logo{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.favoritos{
+    background: white;
+    color: black;
+
+    padding: 5px 10px;
+
+    cursor: pointer;
+}
