@@ -18,9 +18,25 @@
 
     width: 800px;
     max-width: 100%;
-    max-height: 340px;
+    max-height: 280px;
 
     object-fit: cover;
+}
+
+.avaliacao{
+    text-align: center;
+}
+
+.avaliacao .ruim{
+    color: red;
+}
+
+.avaliacao .medio{
+    color: orange;
+}
+
+.avaliacao .boa{
+    color: limegreen;
 }
 
 .filme-info h3{

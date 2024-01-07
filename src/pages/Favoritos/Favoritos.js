@@ -10,7 +10,7 @@ function Favoritos(){
 
     useEffect(() =>{
 
-        const minhaLista = localStorage.getItem("@primeflix");
+        const minhaLista = localStorage.getItem("@myfilmlist");
         setFavoritos(JSON.parse(minhaLista) || []);
 
     }, []);
@@ -22,7 +22,7 @@ function Favoritos(){
 
         setFavoritos(filtroFilmes);
 
-        localStorage.setItem("@primeflix", JSON.stringify(filtroFilmes));
+        localStorage.setItem("@myfilmlist", JSON.stringify(filtroFilmes));
 
         toast.success("Filme removido com sucesso!");
     }
@@ -31,7 +31,16 @@ function Favoritos(){
         <div className="meus-filmes">
             <h1>Meus Filmes</h1>
 
-            {listaFavoritos.length === 0 && <span>Você não possui nenhum filme salvo :(</span>}
+            {(listaFavoritos.length === 0) ? 
+            
+            <div className="noneContainer">
+                <span className="none">Você não possui nenhum filme salvo :(</span> 
+            </div>
+            
+            
+            
+            
+            :
 
             <ul>
                 {listaFavoritos.map((filme)=>{
@@ -40,18 +49,23 @@ function Favoritos(){
                             
                             <div className="filme">
                                 <img src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} alt={filme.title}/>
-                                <span>{filme.title}</span>
+                                <div className="details">
+                                    <span>{filme.title}</span>
+                                    <Link to={`/filme/${filme.id}`}>Ver detalhes</Link>
+                                </div>
                             </div>
 
                             <div className="actions">
-                                <Link to={`/filme/${filme.id}`}>Ver detalhes</Link>
-                                <button onClick={() => excluirFilme(filme.id)}>Excluir</button>
+                                
+                                <button className="btExcluir" onClick={() => excluirFilme(filme.id)}>Excluir</button>
                             </div>
                         </li>
                     );
                 })}
             </ul>
+        }
         </div>
+    
     );
 }
 

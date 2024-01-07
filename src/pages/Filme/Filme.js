@@ -39,7 +39,7 @@ function Filme(){
     }, [navigate, id]); //passando as dependencias externas utilizadas dentro do useEffect
 
     function salvarFilme(){
-        const minhaLista = localStorage.getItem("@primeflix");
+        const minhaLista = localStorage.getItem("@myfilmlist");
         let filmesSalvos = JSON.parse(minhaLista) || [];
 
         const hasFilme = filmesSalvos.some((filmeSalvo) => 
@@ -51,7 +51,7 @@ function Filme(){
             return;
         }
         filmesSalvos.push(filme);
-        localStorage.setItem("@primeflix", JSON.stringify(filmesSalvos));
+        localStorage.setItem("@myfilmlist", JSON.stringify(filmesSalvos));
         toast.success("Filme salvo com sucesso!")
     }
 
@@ -74,7 +74,9 @@ function Filme(){
             <h3>Sinopse</h3>
             <span>{filme.overview}</span>
 
-            <strong>Avaliação: {filme.vote_average} / 10</strong>
+            <strong className="avaliacao">Avaliação: <span className={`avaliacao ${
+                (filme.vote_average < 5) ? "ruim" : (filme.vote_average < 7.5) ? "medio" : "bom"
+            }`}>{filme.vote_average}</span> / 10</strong>
 
             <div className="area-buttons">
                 <button onClick={salvarFilme}>Salvar</button>

@@ -21,6 +21,8 @@ function Home(){
                 }
             });
 
+            console.log(response.data);
+
             setFilmes(response.data.results.slice(0,10)); //pega os 10 primeiros resultados da api
 
         }
@@ -45,8 +47,7 @@ function Home(){
 
                 {filmes.map((filme)=>{
                     return (
-                        <article key={filme.id}>
-                            <strong>{filme.title}</strong>
+                        <article key={filme.id} className={`border-${filme.genre_ids[0]}`}>
                             
                             <div className="filme-container">
 
@@ -55,6 +56,7 @@ function Home(){
                                 </div>
 
                                 <div className="right">
+                                    <strong>{filme.title}</strong>
                                     <div>
                                         <h2>Overview</h2>
                                         <p>{filme.overview}</p>
@@ -63,8 +65,6 @@ function Home(){
                                     <Link to={`/filme/${filme.id}`}>Acessar</Link>
                                 </div>
                             </div>
-                            
-                            <hr/>
                         </article>
                     )
                 })}

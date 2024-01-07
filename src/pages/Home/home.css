@@ -16,17 +16,18 @@
     width: 100%;
     height: auto;
 
-    padding: 15px;
+    padding: 25px 15px;
 
-    border-radius: 4px;
+    border-radius: 10px;
 
-    background-color: white;
+    background-color: rgb(236, 236, 236);
+
+    margin-bottom: 25px;
 }
 
 .lista-filmes strong{
     display: block;
 
-    margin-bottom: 14px;
     text-align: center;
 
     font-size: 22px;
@@ -85,12 +86,12 @@
     justify-content: center;
 
     width: auto;
-    max-width: 70%;
-    padding: 10px 20px;
+    max-width: 80%;
+    padding: 10px 35px;
     margin-top: 14px;
     border-radius: 10px;
     
-    font-size: 24px;
+    font-size: 21px;
     text-decoration: none;
 
     background-color: #116feb;
@@ -105,4 +106,28 @@
 .lista-filmes hr{
     width: 100%;
     margin-top: 30px;   
+}
+
+.border-28 {
+    border-right: 18px solid #116feb;
+}
+
+.border-18{
+    border-right: 18px solid #e63939;
+}
+
+.border-878{
+    border-right: 18px solid #80089e;
+}
+
+.border-27{
+    border-right: 18px solid #0a750a;
+}
+
+.border-35{
+    border-right: 18px solid #ebca11;
+}
+
+.border-16{
+    border-right: 18px solid #11ddeb;
 }
