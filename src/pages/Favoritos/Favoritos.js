@@ -24,7 +24,7 @@ function Favoritos(){
 
         localStorage.setItem("@myfilmlist", JSON.stringify(filtroFilmes));
 
-        toast.success("Filme removido com sucesso!");
+        toast.success("Filme removido dos favoritos!");
     }
 
     return(
@@ -34,7 +34,7 @@ function Favoritos(){
             {(listaFavoritos.length === 0) ? 
             
             <div className="noneContainer">
-                <span className="none">Você não possui nenhum filme salvo :(</span> 
+                <span className="none">Nenhum filme adicionado aos favoritos.</span> 
             </div>
             
             

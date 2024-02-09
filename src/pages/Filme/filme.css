@@ -47,6 +47,16 @@
     margin: 8px 0;
 
     text-align: justify;
+
+}
+
+.filme-info span.overview{
+    
+    background-color: #ebebeb;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid darkgray;
+
 }
 
 .area-buttons button{

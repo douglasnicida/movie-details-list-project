@@ -52,7 +52,7 @@ function Filme(){
         }
         filmesSalvos.push(filme);
         localStorage.setItem("@myfilmlist", JSON.stringify(filmesSalvos));
-        toast.success("Filme salvo com sucesso!")
+        toast.success("Filme adicionado aos favoritos!")
     }
 
     if(loading){
@@ -72,14 +72,14 @@ function Filme(){
             <img src={`https://image.tmdb.org/t/p/original/${filme.backdrop_path}`} alt={filme.title}/>
 
             <h3>Sinopse</h3>
-            <span>{filme.overview}</span>
+            <span className="overview">{filme.overview}</span>
 
             <strong className="avaliacao">Avaliação: <span className={`avaliacao ${
                 (filme.vote_average < 5) ? "ruim" : (filme.vote_average < 7.5) ? "medio" : "bom"
             }`}>{filme.vote_average}</span> / 10</strong>
 
             <div className="area-buttons">
-                <button onClick={salvarFilme}>Salvar</button>
+                <button onClick={salvarFilme}>Favoritar</button>
 
                 <button>
                     <a target="blank" rel="external" href={`https://youtube.com/results?search_query=${filme.title} trailer`}>Trailer</a> 
